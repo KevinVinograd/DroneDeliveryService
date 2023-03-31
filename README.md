@@ -18,7 +18,7 @@ git clone https://github.com/your-username/drone-delivery-service.git
 ./gradlew build
 ```
 
-3. Create docker container with postgres database:
+3. Create docker container with postgres database (you need docker in your computer):
 ```
 cd drone-delivery-service
 ./gradlew composeUp
