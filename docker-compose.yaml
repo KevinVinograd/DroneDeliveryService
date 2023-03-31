@@ -1,0 +1,10 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:13.2-alpine
+    environment:
+      POSTGRES_USER: codeal
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: codeal
+    ports:
+      - "5432:5432"
