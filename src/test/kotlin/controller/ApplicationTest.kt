@@ -4,24 +4,14 @@ package controller
 import kotlin.test.*
 import io.mockk.*
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.sync.Mutex
 import model.Drone
 import model.DroneState
-import model.Drones
 import model.Medication
-import org.h2.jdbcx.JdbcDataSource
-import org.jetbrains.exposed.sql.Database
-import org.jetbrains.exposed.sql.SchemaUtils
-import org.jetbrains.exposed.sql.transactions.transaction
-import org.jetbrains.exposed.sql.transactions.transactionManager
-import org.junit.Before
 import org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
 import repository.DroneRepository
-import java.util.concurrent.ConcurrentHashMap
 import service.DroneService
-import java.util.*
-import javax.sql.DataSource
+
 
 class ApplicationTest {
 
@@ -75,7 +65,7 @@ class ApplicationTest {
     }
 
     @Test
-    fun `loadDrone should throw IllegalStateException when drone battery level is below 25%`() = runBlocking {
+    fun `loadDrone should throw IllegalStateException when drone battery level is below 25`() = runBlocking {
         // Arrange
         val serialNumber = "serial-1"
         val medicationCode = listOf("med-1", "med-2")

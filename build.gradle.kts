@@ -1,12 +1,10 @@
 import org.gradle.kotlin.dsl.*
 
-
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
 val postgres_version: String by project
 val h2_version: String by project
-
 
 kotlin {
     target.compilations.all{
@@ -20,7 +18,6 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
     id("com.avast.gradle.docker-compose") version "0.16.11"
     id("org.flywaydb.flyway") version "9.16.1"
-    id("org.jlleitschuh.gradle.ktlint") version "10.1.0"
 }
 application {
     mainClass.set("ApplicationKt")
@@ -34,7 +31,6 @@ version = "1.0.0"
 repositories {
     mavenCentral()
 }
-
 
 dependencies {
     implementation("io.insert-koin:koin-ktor:3.4.0")
